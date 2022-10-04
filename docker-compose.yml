@@ -1,0 +1,12 @@
+version: "3"
+services:
+  node-app:
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: ./
+    volumes:
+      - /usr/app/node_modules
+      - ./node-app:/user/app
+    ports:
+      - "4000:4000"
